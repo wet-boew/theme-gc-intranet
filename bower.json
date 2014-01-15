@@ -1,0 +1,20 @@
+{
+  "name": "theme-gc-intranet",
+  "version": "4.0.0-b1-development",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower.json",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+	 "wet-boew": "https://github.com/wet-boew/wet-boew/tarball/v4.0"
+  },
+  "resolutions": {
+    "jquery": ">= 1.9.0"
+  }
+}
+
