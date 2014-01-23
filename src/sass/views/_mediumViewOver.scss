@@ -7,3 +7,235 @@
 /*
   @title: Medium view and over (screen only)
  */
+$language-toggle-gradient-start: #494949;
+$language-toggle-gradient-end: #333333;
+$banner-gradient-start: #29527D;
+$banner-gradient-end: #397BC5;
+$search-button-gradient-start: #F0F0F0;
+$search-button-gradient-end: #CCC;
+$navigation-bar-gradient-start: #2A79C5;
+$navigation-bar-gradient-end: #1B5A9F;
+$footer-decoration-gradient-start: #CBCBCB;
+$footer-decoration-gradient-end: #999;
+
+%page-borders {
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+
+%search-controls-overrides {
+	border-radius: 2px;
+	height: 26px;
+}
+
+
+%submenu-colors {
+	background-color: #CCC;
+	color: #000;
+}
+
+// TODO: Implement when libsass gets better placeholder support
+// %navigation-links {
+//	a {
+//		&:link {
+//			text-decoration: none;
+//		}
+//
+//		&:hover, &:focus {
+//			text-decoration: underline;
+//		}
+//	}
+//}
+//
+
+@mixin linear-background($start-color, $end-color) {
+	background-image: linear-gradient($start-color, $end-color);
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#{$start-color}', endColorstr='#{$end-color}')");
+}
+
+#wmms {
+	height: 33px;
+	top: 0;
+	right: 0;
+	margin-top: -54px;
+	position: absolute;
+	z-index: 2;
+}
+
+#gcwu-sig {
+	margin-top: 45px;
+}
+
+#wb-bnr {
+	background: $banner-gradient-start;
+}
+
+#wb-bar {
+	background: #FFF;
+	border-top: 5px $language-toggle-gradient-start solid;
+	border-bottom: 2px solid #CCC;
+	position: relative;
+	box-shadow: 0 2px 5px;
+	z-index: 2;
+
+	+ {
+		.container {
+			background: linear-gradient(to left, $banner-gradient-start, $banner-gradient-end, $banner-gradient-start);
+			position: relative;
+		}
+	}
+}
+
+#wb-lng {
+	float: right;
+	@include linear-background ($language-toggle-gradient-start, $language-toggle-gradient-end);
+	padding: 0 1em;
+	border-radius: 0 0 0.5em 0.5em;
+
+	ul {
+		margin-bottom: 5px;
+	}
+
+	a {
+		color: #FFF;
+
+		// TODO: Implement %navigation-links when libsass gets better placeholder support
+		&:link {
+			text-decoration: none;
+		}
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+#wb-srch {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 0.7em;
+
+	input {
+		@extend %search-controls-overrides;
+		padding: 2px 0;
+	}
+
+	.btn {
+		@extend %search-controls-overrides;
+		@include linear-background ($search-button-gradient-start, $search-button-gradient-end);
+		padding: 2px 6px;
+		line-height: 1;
+
+		&:hover, &:focus {
+			@include linear-background ($search-button-gradient-end, $search-button-gradient-start);
+		}
+	}
+}
+
+#wb-sttl {
+	min-height: 2em;
+	margin: 5px 0;
+	position: relative;
+	a {
+		font-size: 1.9em;
+		text-shadow: 1px 1px 1px #333;
+	}
+}
+
+#wb-sm {
+	margin-top: 15px;
+	.nvbar {
+		background-color: #146094;
+		@include linear-background ($navigation-bar-gradient-start, $navigation-bar-gradient-end);
+		border-top: 1px solid #87AEC9;
+		border-bottom: 4px solid #CCCCCC;
+
+		ul
+		 {
+			&.menu {
+				margin-bottom: 0;
+				> {
+					li {
+						padding: 0;
+						border-left: 1px solid #1B5A9F;
+						border-right: 1px solid #3874BD;
+
+						&.active {
+							border-left-color: #CCC;
+							border-right-color: #CCC;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.active {
+		a {
+			@extend %submenu-colors;
+		}
+	}
+
+	a {
+		display: block;
+		color: #FFF;
+		font-weight: 700;
+		font-size: 90%;
+		padding: 0.48em 1.17em 0.48em 0.79em;
+		text-decoration: none;
+	}
+
+	.sm {
+		@extend %submenu-colors;
+		border-bottom: 4px solid #0F315B;
+		box-shadow: 0 5px 5px -4px rgba(0, 0, 0, 0.5), 5px 5px 5px -4px rgba(0, 0, 0, 0.5), -5px 5px 5px -4px rgba(0, 0, 0, 0.5);
+		border-radius: 0 0 3px 3px;
+
+		a {
+			@extend %submenu-colors;
+			font-weight: 400;
+
+			// TODO: Implement %navigation-links when libsass gets better placeholder support
+			&:link {
+				text-decoration: none;
+			}
+
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+#wb-bc {
+	.container {
+		@extend %page-borders;
+	}
+}
+
+body {
+	> {
+		main {
+			@extend %page-borders;
+		}
+
+		header + .container {
+			@extend %page-borders;
+		}
+	}
+}
+
+#wb-info {
+	background: #EEE;
+	&:after {
+		content: " ";
+		display: block;
+		height: 55px;
+		@include linear-background ($footer-decoration-gradient-start, $footer-decoration-gradient-end);
+	}
+}
+
+#gc-tctr {
+	margin-top: 1em;
+}
