@@ -62,6 +62,18 @@
 					</div>
 				</div>
 			</div>
+{{#if subsite}}
+			<div id="wb-bnr-ss">
+				<div class="container">
+					<div class="row">
+						<div id="wb-ss">
+							{{>subsite}}
+						</div>
+					</div>
+				</div>
+			</div>
+{{/if}}
+
 {{#isnt sitemenu "false"}}
 			<nav role="navigation" id="wb-sm" data-ajax-fetch="{{assets}}/ajax/sitemenu-{{language}}.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
 				{{>sitemenu}}

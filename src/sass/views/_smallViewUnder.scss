@@ -12,6 +12,10 @@
 	display: none;
 }
 
+%no-margin {
+	margin: 0;
+}
+
 #gcwu-sig {
 	@extend %small-view-display-none;
 }
@@ -31,7 +35,13 @@
 	background-image: linear-gradient(#4474AD, #4474AD, #174F88);
 
 	.row {
-		margin: 0;
+		@extend %no-margin;
+	}
+}
+
+#wb-bnr-ss {
+	.row {
+		@extend %no-margin;
 	}
 }
 

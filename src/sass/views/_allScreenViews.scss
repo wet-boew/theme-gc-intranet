@@ -8,6 +8,25 @@
   @title: All screen views
  */
 
+ // TODO: Implement when libsass gets better placeholder support
+// %banner-links {
+//	a {
+//		color: #FFF;
+//		&:link {
+//			text-decoration: none;
+//		}
+//
+//		&:hover, &:focus {
+//			text-decoration: underline;
+//		}
+//	}
+//}
+//
+
+%banner-text-color {
+	color: #FFF;
+}
+
 %fip-height {
 	height: 22px;
 }
@@ -22,9 +41,37 @@
 }
 
 #wb-sttl {
+	// TODO: Implement when libsass gets better placeholder support
 	a {
-		color: #FFF;
-		text-decoration: none;
+		@extend %banner-text-color;
+		&:link {
+			text-decoration: none;
+		}
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+#wb-bnr-ss {
+	background: #618000;
+}
+
+#wb-ss {
+	padding: 0.2em 0;
+	// TODO: Implement when libsass gets better placeholder support
+	a {
+		@extend %banner-text-color;
+		font-size: 120%;
+
+		&:link {
+			text-decoration: none;
+		}
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
 	}
 }
 
