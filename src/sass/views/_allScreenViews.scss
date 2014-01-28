@@ -80,4 +80,21 @@
 		margin-bottom: 0;
 		background: transparent;
 	}
+
+	li {
+		&:before, &:after {
+			font-family: "Glyphicons Halflings";
+			font-size: 0.7em;
+			color: #333;
+		}
+		&:before {
+			content: "\e092";
+		}
+
+		&:first-child {
+			&:before {
+				content: ""
+			}
+		}
+	}
 }
