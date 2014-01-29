@@ -2,6 +2,10 @@ language: node_js
 node_js:
   - '0.10'
 
+env:
+  global:
+    - secure: "T65wgWLDrktkQvtXCMVMCXKbjTZMN6LPK6GSAybjnO0U8+SvOCQYbR/UHiuxatr3gxO4M46lJ/rhEuTLm70qciA9cNW7mlHEsAbolVPHoTcHUVUvnY20WfhrthVfcNwkmg2sMLXN7GOe5PS5VXxzKnqDaQSdbY9YsoulOHmaxxQ="
+
 install:
   - scripts/setup
 
