@@ -21,12 +21,13 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "wet-boew/t
 
 	echo -e "Updating submodules"
 
+	cd themes-dist
 	git checkout --force gh-pages
 	git submodule update --remote --force
 	git add .
 	git commit -m "Updated submodules"
 
-	git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages > /dev/null 2>&1 || error_exit "Error updating the working examples"
+	git push -fq https://${GH_TOKEN}@github.com/wet-boew/themes-dist.git gh-pages > /dev/null 2>&1 || error_exit "Error updating the working examples"
 fi
 
 end=$(date +%s)
