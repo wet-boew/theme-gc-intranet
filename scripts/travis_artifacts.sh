@@ -22,8 +22,10 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "wet-boew/t
 	echo -e "Updating submodules"
 
 	cd themes-dist
-	git checkout --force gh-pages
-	git submodule update --remote --force
+
+	git fetch origin refs/heads/gh-pages:gh-pages
+	git checkout gh-pages
+	git submodule update --remote
 	git add .
 	git commit -m "Updated submodules"
 
