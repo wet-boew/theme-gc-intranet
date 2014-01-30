@@ -19,6 +19,14 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "wet-boew/t
 
 	grunt deploy || error_exit "Error running gh-pages task";
 
+	echo -e "Updating submodules"
+
+	git checkout gh-pages
+	git submodule update --remote
+	git add .
+	git commit -m "Updated submodules"
+
+	git push -fq https://${GH_TOKEN}@github.com/${$TRAVIS_REPO_SLUG}.git gh-pages > /dev/null 2>&1 || error_exit "Error updating the working examples"
 fi
 
 end=$(date +%s)
