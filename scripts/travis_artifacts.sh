@@ -21,7 +21,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "wet-boew/t
 
 	echo -e "Updating submodules"
 
-	git checkout gh-pages
+	git checkout --force gh-pages
 	git submodule update --remote --force
 	git add .
 	git commit -m "Updated submodules"
