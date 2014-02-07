@@ -23,6 +23,11 @@
 //}
 //
 
+%no-breadcrumb-icon {
+	content: none;
+	padding: 0;
+}
+
 %banner-text-color {
 	color: #FFF;
 }
@@ -93,7 +98,7 @@
 
 		&:first-child {
 			&:before {
-				content: ""
+				@extend %no-breadcrumb-icon;
 			}
 		}
 	}
