@@ -103,3 +103,12 @@
 		}
 	}
 }
+
+#wb-dtmd {
+	float: right;
+	margin: 1em 0 0 0;
+
+	dt, dd {
+		display: inline;
+	}
+}
