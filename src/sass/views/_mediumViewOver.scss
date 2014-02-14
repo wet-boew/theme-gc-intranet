@@ -238,6 +238,46 @@ body {
 	}
 }
 
+#wb-sec {
+	> {
+		ul {
+			> {
+				li {
+					> {
+						a {
+							background: #DDD;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		border-radius: 0;
+		border: 1px solid #CCC;
+		margin-top: -1px;
+		// TODO: Implement %navigation-links when libsass gets better placeholder support
+		&:link {
+			text-decoration: none;
+		}
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.list-group {
+		margin-bottom: 0;
+		
+		.list-group {
+			.list-group-item {
+				padding-left: 1.8em;
+			}
+		}
+	}
+}
+
 #gc-tctr {
 	margin-top: 1em;
 }
