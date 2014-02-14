@@ -89,7 +89,6 @@ $footer-decoration-gradient-end: #999;
 	float: right;
 	@include linear-background ($language-toggle-gradient-start, $language-toggle-gradient-end);
 	padding: 0 1em;
-	border-radius: 0 0 0.5em 0.5em;
 
 	ul {
 		margin-bottom: 5px;
