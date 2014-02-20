@@ -22,9 +22,13 @@
 
 #wmms {
 	position: absolute;
-	left: 0;
-	top: -2.5em;
+	left: 15px;
+	top: -1.9em;
 	width: 90px;
+}
+
+#wb-bar {
+	min-height: 2.2em;
 }
 
 #wb-lng {
@@ -33,16 +37,6 @@
 
 #wb-bnr {
 	background-image: linear-gradient(#4474AD, #4474AD, #174F88);
-
-	.row {
-		@extend %no-margin;
-	}
-}
-
-#wb-bnr-ss {
-	.row {
-		@extend %no-margin;
-	}
 }
 
 #wb-bar {
@@ -58,14 +52,21 @@
 }
 
 #wb-glb-mn {
-	padding: 0;
-
-	> ul {
-		margin: 10px 0;
-
+	.pnl-btn {
+		position: relative;
+		float: right;
+		width: 50%;
+		z-index: 2;
+		margin-bottom: 0;
+		li {
+			padding: 3px 0 0;
+			width: 100%;
+		}
 		a {
 			color: #FFF;
 			font-size: 1.5em;
+			display: block;
+			width: 100%;
 		}
 	}
 }
@@ -91,8 +92,63 @@
 	.lng-ofr {
 		text-align: right;
 	}
+
+	.srch-pnl {
+		.form-group {
+			float: left;
+			margin-right: 5px;
+			width: 75%;
+		}
+	}
 }
 
 #wb-bc {
 	background: linear-gradient(#F0EFEF, #DFDFDD) repeat scroll 0 0 / 100% auto #DFDFDD;
+}
+
+[dir=rtl] {
+	#mb-pnl {
+		.lng-ofr {
+			text-align: left;
+			ul {
+				margin-left: 0;
+			}
+			li {
+				padding-left: 0;
+				padding-right: 10px;
+			}
+		}
+		.srch-pnl {
+			.form-group {
+				float: right;
+				margin-right: auto;
+				margin-left: 5px;
+				width: 75%;
+			}
+		}
+		ul {
+			li {
+				&.no-sect {
+					padding-left: 0;
+					padding-right: 1.27em
+				}
+			}
+		}
+	}
+
+	#wmms {
+		left: auto;
+		right: 15px;
+	}
+
+	#wb-glb-mn {
+		> {
+			ul {
+				text-align: left;
+			}
+		}
+		.pnl-btn {
+			float: left;
+		}
+	}
 }
