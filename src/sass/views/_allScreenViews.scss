@@ -106,9 +106,27 @@
 
 #wb-dtmd {
 	float: right;
-	margin: 1em 0 0 0;
+}
 
-	dt, dd {
-		display: inline;
+[dir=rtl] {
+	#wb-bc {
+		li {
+			&:before {
+				@extend %no-breadcrumb-icon;
+			}
+			&:after {
+				content: "\e091";
+				padding: 0 5px;
+			}
+			&:first-child {
+				&:after {
+					@extend %no-breadcrumb-icon;
+				}
+			}
+		}
+	}
+
+	#wb-dtmd {
+		float: left;
 	}
 }
