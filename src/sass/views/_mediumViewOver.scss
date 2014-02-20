@@ -276,3 +276,28 @@ body {
 #gc-tctr {
 	margin-top: 1em;
 }
+
+[dir=rtl] {
+	#wmms, #wb-srch {
+		left: 0;
+		right: auto;
+	}
+
+	#gcwu-sig {
+		float: right;
+	}
+
+	#wb-lng {
+		float: left;
+		padding-right: 5px;
+	}
+
+	#gc-tctr {
+		padding-right: 0;
+		li {
+			&:first-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
