@@ -1,0 +1,85 @@
+---
+{
+	"title": "Government of Canada Intranet theme",
+	"language": "en",
+	"description": "This theme implements the requirements of the Standard on Web Usability and is recommended for use on all Government of Canada websites (except for Canada.ca).",
+	"altLangPrefix": "theme-wet-boew",
+	"dateModified": "2014-02-25"
+}
+---
+<span class="wb-prettify all-pre hide"></span>
+
+<section>
+	<h2>Purpose</h2>
+	<p>This theme implements the requirements of the <a href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=24227">Standard on Web Usability</a> and is recommended for use on all Government of Canada websites (except for Canada.ca).</p>
+</section>
+
+<section>
+	<h2>Use when</h2>
+	<ul>
+		<li>This theme can be used on Government of Canada intranet sites (including web applications).</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Do not use when</h2>
+	<ul>
+		<li>This theme can only be used on Government of Canada intranet sites.</li>
+	</ul>
+</section>
+
+<section>
+	<h2>Working example</h2>
+	<p><a href="../../../index-en.html">English and French examples</a></p>
+</section>
+
+<section>
+	<h2>How to implement</h2>
+	<section>
+		<h3>General instructions</h3>
+		<ol>
+			<li>Use the <strong>*.html</strong> files to create your Web pages.</li>
+			<li><strong>Optional:</strong> Create, install and link to one or more new CSS files (will be used for custom CSS)</li>
+			<li>Correct all <strong>*.css</strong>, <strong>*.js</strong>, and <strong>*.gif</strong> file paths referenced in the installed <strong>*.html</strong> files</li>
+			<li>Replace the page title (in between <code>&lt;title&gt;</code> and <code>&lt;/title&gt;</code>), the site title, and the content title (in between <code>&lt;h1 id="wb-cont"&gt;</code> and <code>&lt;/h1&gt;</code>)</li>
+			<li>Correct the metadata values</li>
+		</ol>
+	</section>
+	<section>
+		<h3>Server instructions</h3>
+		<p>Configure Custom HTTP Headers to emit <strong>"X-UA-Compatible" "IE=Edge"</strong>. Instructions on configuring IIS (<a href="http://msdn.microsoft.com/en-ca/cc817572.aspx">English</a> / <a href="http://msdn.microsoft.com/fr-ca/cc817572.aspx">French</a>) or Apache (<a href="http://msdn.microsoft.com/en-ca/library/cc817573.aspx">English</a> / <a href="http://msdn.microsoft.com/fr-ca/library/cc817573.aspx">French</a>) can be found on MSDN. This setting will ensure Internet Explorer 8, 9, and 10 will use their most recent rendering engine, as opposed to "Compatibility Views".</p>
+	<section>
+		<h3>Content page-specific instructions (content-*.html)</h3>
+		<ol>
+			<li>Correct the menu bar links or <a href="../../../content-nositemenubc-en.html">remove the menu bar</a></li>
+			<li>Correct the <strong>English/<span lang="fr">Français</span></strong> link or <a href="../../../content-nosearchlang-en.html">remove the language selection link</a></li>
+			<li><strong>Optional:</strong> Optional: <a href="<a href="../../../content-subsite-en.html">">Add a sub-site title</a></li>
+			<li><strong>Optional:</strong> Implement the <a href="../../../content-secmenu-en.html">secondary menu</a> (maximum of 2 levels)</li>
+			<li>Correct the search field or <a href="../../../content-nosearchlang-en.html">remove the search field</a></li>
+			<li>Correct the breadcrumb trail or <a href="../../../content-nositemenubc-en.html">remove the breadcrumb trail</a></li>
+			<li>Correct the <strong>Transparency/<span lang="fr">Transparence</span></strong> link or remove the <strong>Transparency/<span lang="fr">Transparence</span></strong> link</li>
+			<li>Correct the site footer links</li>
+			<li>Correct the <strong>Date modified/<span lang="fr">Date de modification</span></strong> or remove the <strong>Date modified/<span lang="fr">Date de modification</span></strong></li>
+		</ol>
+	</section>
+	<section>
+		<h3>Splash page-specific instructions (splashpage-*.html)</h3>
+		<ol>
+			<li>Correct the English and French language links</li>
+		</ol>
+	</section>
+	<section>
+		<h3>Server message page-specific instructions (serv*.html)</h3>
+		<ol>
+			<li>Replace the English and/or French messages.</li>
+		</ol>
+	</section>
+</section>
+
+<section>
+	<h2>Source code</h2>
+	<ul>
+		<li><a href="https://github.com/wet-boew/{{site.repository}}/tree/master/src">Government of Canada Intranet theme source code on GitHub</a></li>
+		<li><a href="https://github.com/wet-boew/{{site.repository}}/tree/master/site/pages">Government of Canada Intranet theme demo pages source code on GitHub</a></li>
+	</ul>
+</section>
