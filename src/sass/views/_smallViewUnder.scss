@@ -71,6 +71,12 @@
 	}
 }
 
+%gcintranet-theme-site-menu-mb-pnl-padding-10-20 {
+	padding: 10px 20px;
+}
+%small-view-under-color-fff {
+	color: #fff;
+}
 #mb-pnl {
 	header {
 		background-color: #174F88;
@@ -94,9 +100,6 @@
 		padding: 0;
 	}
 
-	%gcintranet-theme-site-menu-mb-pnl-padding-10-20 {
-		padding: 10px 20px;
-	}
 	.srch-pnl {
 		@extend %gcintranet-theme-site-menu-mb-pnl-padding-10-20;
 		.form-group {
@@ -106,9 +109,6 @@
 		}
 	}
 
-	%small-view-under-color-fff {
-		color: #fff;
-	}
 	#wb-srch-sub-imprt {
 		background: #146094;
 		border-color: #146094;

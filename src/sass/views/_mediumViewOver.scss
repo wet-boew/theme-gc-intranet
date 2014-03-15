@@ -237,6 +237,10 @@ body {
 	}
 }
 
+%secmenu-gcintranet-theme-menuitem-curr-hover-focus {
+	background: darken($clrWhite, 50%);
+	color: lighten($clrDark, 75%);
+}
 #wb-sec {
 	margin-top: 20px;
 	padding-bottom: 2em;
@@ -249,16 +253,12 @@ body {
 				border-radius: 0;
 				margin-top: -1px;
 				text-decoration: none;
-				%secmenu-wet-theme-menuitem-curr-hover-focus {
-					background: darken($clrWhite, 50%);
-					color: lighten($clrDark, 75%);
-				}
 				&.wb-navcurr {
-					@extend %secmenu-wet-theme-menuitem-curr-hover-focus;
+					@extend %secmenu-gcintranet-theme-menuitem-curr-hover-focus;
 				}
 				&[href] {
 					&:hover, &:focus {
-						@extend %secmenu-wet-theme-menuitem-curr-hover-focus;
+						@extend %secmenu-gcintranet-theme-menuitem-curr-hover-focus;
 					}
 				}
 			}
