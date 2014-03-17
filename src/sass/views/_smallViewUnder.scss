@@ -43,6 +43,7 @@ $gcintranet-theme-mb-pnl-bg: #efefef;
 
 #wb-bnr {
 	background-image: linear-gradient(#4474AD, #4474AD, #174F88);
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4474AD', endColorstr='#174F88')");
 }
 
 #wb-bar {
