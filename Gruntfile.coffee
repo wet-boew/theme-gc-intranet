@@ -99,6 +99,15 @@ module.exports = ->
 		]
 	)
 
+	@registerTask(
+		"test"
+		"INTERNAL: Runs testing tasks except for SauceLabs testing"
+		[
+			"jshint"
+			"jscs"
+		]
+	)
+
 	@initConfig
 
 		# Metadata.
@@ -197,6 +206,21 @@ module.exports = ->
 				src: "*theme*.css"
 				ext: ".min.css"
 				dest: "dist/css"
+
+		jshint:
+			options:
+				jshintrc: "lib/wet-boew/.jshintrc"
+
+			lib_test:
+				src: [
+					"src/**/*.js"
+				]
+
+		jscs:
+			all:
+				src: [
+					"src/**/*.js"
+				]
 
 		# Minify
 		uglify:
@@ -385,6 +409,7 @@ module.exports = ->
 	@loadNpmTasks "grunt-gh-pages"
 	@loadNpmTasks "grunt-htmlcompressor"
 	@loadNpmTasks "grunt-hub"
+	@loadNpmTasks "grunt-jscs-checker"
 	@loadNpmTasks "grunt-sass"
 
 	@
