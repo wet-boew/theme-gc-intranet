@@ -159,11 +159,10 @@ $footer-decoration-gradient-end: #999;
 				> {
 					li {
 						padding: 0;
-						border-left: 1px solid #1B5A9F;
-						border-right: 1px solid #3874BD;
+						border-right: 1px solid #999;
 
 						&.active {
-							border-left-color: #CCC;
+							border-color: #CCC;
 							border-right-color: #CCC;
 						}
 					}
