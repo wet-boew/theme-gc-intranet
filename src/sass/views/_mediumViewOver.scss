@@ -145,6 +145,10 @@ $footer-decoration-gradient-end: #999;
 	box-shadow: inset 0 1px 5px;
 }
 
+%gcintranet-theme-wb-sm-wb-navcurr {
+	background: #0F315B;
+	color: #fff;
+}
 #wb-sm {
 	margin-top: 15px;
 	.nvbar {
@@ -161,7 +165,13 @@ $footer-decoration-gradient-end: #999;
 					li {
 						padding: 0;
 						border-right: 1px solid #999;
-
+						> {
+							a {
+								&.wb-navcurr {
+									@extend %gcintranet-theme-wb-sm-wb-navcurr;
+								}
+							}
+						}
 						&.active {
 							border-color: #CCC;
 							border-right-color: #CCC;
@@ -199,7 +209,9 @@ $footer-decoration-gradient-end: #999;
 			&:link {
 				text-decoration: none;
 			}
-
+			&.wb-navcurr {
+				@extend %gcintranet-theme-wb-sm-wb-navcurr;
+			}
 			&:hover, &:focus {
 				text-decoration: underline;
 			}
