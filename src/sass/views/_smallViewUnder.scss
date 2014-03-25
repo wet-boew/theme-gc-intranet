@@ -8,8 +8,14 @@
   @title: Small view and under (screen only)
  */
 
+$gcintranet-theme-mb-pnl-bg: #efefef;
+
 %small-view-display-none {
 	display: none;
+}
+
+%small-view-under-color-fff {
+	color: #fff;
 }
 
 %no-margin {
@@ -71,10 +77,6 @@
 	}
 }
 
-%small-view-under-color-fff {
-	color: #fff;
-}
-$gcintranet-theme-mb-pnl-bg: #efefef;
 #mb-pnl {
 	background: $gcintranet-theme-mb-pnl-bg;
 	header {

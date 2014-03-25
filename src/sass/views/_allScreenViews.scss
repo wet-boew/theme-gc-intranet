@@ -8,21 +8,6 @@
   @title: All screen views
  */
 
- // TODO: Implement when libsass gets better placeholder support
-// %banner-links {
-//	a {
-//		color: #FFF;
-//		&:link {
-//			text-decoration: none;
-//		}
-//
-//		&:hover, &:focus {
-//			text-decoration: underline;
-//		}
-//	}
-//}
-//
-
 %no-breadcrumb-icon {
 	content: none;
 	padding: 0;
@@ -36,6 +21,10 @@
 	height: 1.4em;
 }
 
+%all-view-navigation-links {
+	@include navigation-links;
+}
+
 #gcwu-sig {
 	@extend %fip-height;
 	margin: 10px 0;
@@ -46,16 +35,9 @@
 }
 
 #wb-sttl {
-	// TODO: Implement when libsass gets better placeholder support
+	@extend %all-view-navigation-links;
 	a {
 		@extend %banner-text-color;
-		&:link {
-			text-decoration: none;
-		}
-
-		&:hover, &:focus {
-			text-decoration: underline;
-		}
 	}
 }
 
@@ -65,18 +47,10 @@
 
 #wb-ss {
 	padding: 0.2em 0;
-	// TODO: Implement when libsass gets better placeholder support
+	@extend %all-view-navigation-links;
 	a {
 		@extend %banner-text-color;
 		font-size: 120%;
-
-		&:link {
-			text-decoration: none;
-		}
-
-		&:hover, &:focus {
-			text-decoration: underline;
-		}
 	}
 }
 

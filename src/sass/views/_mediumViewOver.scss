@@ -33,19 +33,19 @@ $footer-decoration-gradient-end: #999;
 	color: #000;
 }
 
-// TODO: Implement when libsass gets better placeholder support
-// %navigation-links {
-//	a {
-//		&:link {
-//			text-decoration: none;
-//		}
-//
-//		&:hover, &:focus {
-//			text-decoration: underline;
-//		}
-//	}
-//}
-//
+%secmenu-gcintranet-theme-menuitem-curr-hover-focus {
+	background: darken($clrWhite, 50%);
+	color: lighten($clrDark, 75%);
+}
+
+%gcintranet-theme-wb-sm-wb-navcurr {
+	background: #0F315B;
+	color: #fff;
+}
+
+%medium-view-navigation-links {
+	@include navigation-links;
+}
 
 @mixin linear-background($start-color, $end-color) {
 	background-image: linear-gradient($start-color, $end-color);
@@ -87,9 +87,10 @@ $footer-decoration-gradient-end: #999;
 }
 
 #wb-lng {
-	float: right;
+	@extend %medium-view-navigation-links;
 	@include linear-background ($language-toggle-gradient-start, $language-toggle-gradient-end);
 	padding: 0 1em;
+	float: right;
 
 	ul {
 		margin-left: 0;
@@ -98,15 +99,6 @@ $footer-decoration-gradient-end: #999;
 
 	a {
 		color: #FFF;
-
-		// TODO: Implement %navigation-links when libsass gets better placeholder support
-		&:link {
-			text-decoration: none;
-		}
-
-		&:hover, &:focus {
-			text-decoration: underline;
-		}
 	}
 }
 
@@ -145,10 +137,6 @@ $footer-decoration-gradient-end: #999;
 	box-shadow: inset 0 1px 5px;
 }
 
-%gcintranet-theme-wb-sm-wb-navcurr {
-	background: #0F315B;
-	color: #fff;
-}
 #wb-sm {
 	margin-top: 15px;
 	.nvbar {
@@ -197,6 +185,7 @@ $footer-decoration-gradient-end: #999;
 	}
 
 	.sm {
+		@extend %medium-view-navigation-links;
 		@extend %submenu-colors;
 		border-bottom: 4px solid #0F315B;
 		border-radius: 0 0 3px 3px;
@@ -205,15 +194,8 @@ $footer-decoration-gradient-end: #999;
 			@extend %submenu-colors;
 			font-weight: 400;
 
-			// TODO: Implement %navigation-links when libsass gets better placeholder support
-			&:link {
-				text-decoration: none;
-			}
 			&.wb-navcurr {
 				@extend %gcintranet-theme-wb-sm-wb-navcurr;
-			}
-			&:hover, &:focus {
-				text-decoration: underline;
 			}
 		}
 		.slflnk {
@@ -251,10 +233,6 @@ body {
 	}
 }
 
-%secmenu-gcintranet-theme-menuitem-curr-hover-focus {
-	background: darken($clrWhite, 50%);
-	color: lighten($clrDark, 75%);
-}
 #wb-sec {
 	margin-top: 20px;
 	padding-bottom: 2em;
