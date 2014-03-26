@@ -9,6 +9,11 @@
 @import "../../lib/wet-boew/src/variables";
 @import "variables";
 
+@mixin linear-background($start-color, $end-color) {
+	background-image: linear-gradient($start-color, $end-color);
+	filter: unquote("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#{$start-color}', endColorstr='#{$end-color}')");
+}
+
 /*
  Views
  */
