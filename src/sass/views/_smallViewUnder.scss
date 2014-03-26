@@ -30,7 +30,6 @@ $gcintranet-theme-mb-pnl-bg: #efefef;
 	position: absolute;
 	left: 15px;
 	top: -1.9em;
-	width: 90px;
 }
 
 #wb-bar {
@@ -61,19 +60,19 @@ $gcintranet-theme-mb-pnl-bg: #efefef;
 #wb-glb-mn {
 	.pnl-btn {
 		position: relative;
-		float: right;
-		width: 50%;
 		z-index: 2;
-		margin-bottom: 0;
+		margin: 0;
+		float: right;
 		li {
-			padding: 3px 0 0;
+			padding: 4px 10px;
 			width: 100%;
 		}
 		a {
-			color: #FFF;
 			font-size: 1.5em;
 			display: block;
 			width: 100%;
+			color: #000;
+			line-height: 1em;
 		}
 	}
 }
