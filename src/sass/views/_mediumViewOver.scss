@@ -15,6 +15,7 @@ $search-button-gradient-start: #F0F0F0;
 $search-button-gradient-end: #CCC;
 $navigation-bar-gradient-start: #2A79C5;
 $navigation-bar-gradient-end: #1B5A9F;
+$header-margin: 15px;
 
 %page-borders {
 	border-left: 1px solid #CCC;
@@ -48,7 +49,7 @@ $navigation-bar-gradient-end: #1B5A9F;
 #wmms {
 	height: 1.9em;
 	top: 0;
-	right: 15px;
+	right: $header-margin;
 	margin-top: -2.8em;
 	position: absolute;
 	z-index: 2;
@@ -56,7 +57,7 @@ $navigation-bar-gradient-end: #1B5A9F;
 
 #gcwu-sig {
 	margin-top: 2.8em;
-	margin-left: 15px;
+	margin-left: $header-margin;
 }
 
 #wb-bnr {
@@ -83,6 +84,7 @@ $navigation-bar-gradient-end: #1B5A9F;
 	@extend %medium-view-navigation-links;
 	@include linear-background ($language-toggle-gradient-start, $language-toggle-gradient-end);
 	padding: 0 1em;
+	margin-right: $header-margin;
 	float: right;
 
 	ul {
@@ -98,7 +100,7 @@ $navigation-bar-gradient-end: #1B5A9F;
 #wb-srch {
 	position: absolute;
 	top: 0;
-	right: 15px;
+	right: $header-margin;
 	margin-top: 0.5em;
 
 	input {
