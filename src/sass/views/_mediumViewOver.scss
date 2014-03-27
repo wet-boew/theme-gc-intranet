@@ -12,7 +12,7 @@ $language-toggle-gradient-end: #333333;
 $banner-gradient-start: #29527D;
 $banner-gradient-end: #397BC5;
 $search-button-gradient-start: #F0F0F0;
-$search-button-gradient-end: #CCC;
+$search-button-gradient-end: #CCCCCC; /* Shorthand can't be used because it doesn't work with IE 8 & 9 gradients */
 $navigation-bar-gradient-start: #2A79C5;
 $navigation-bar-gradient-end: #1B5A9F;
 $header-margin: 15px;
