@@ -3,7 +3,7 @@
 	"officiallanguage": "<%= language === 'en' || language === 'fr' %>"
 }
 ---
-<object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="{{assets}}/assets/sig-blk-{{#is headerbar.officiallanguage "true"}}{{language}}{{else}}{{site.defaultLanguage}}{{/is}}.svg" aria-label="{{i18n "tmpl-gc-sig"}}"></object>
+<object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="{{assets}}/assets/sig-blk-{{#is headerbar.officiallanguage "true"}}{{language}}{{else}}{{site.defaultLanguage}}{{/is}}.svg" aria-label="{{{i18n "tmpl-gc-sig"}}}"></object>
 {{#isnt languagetoggle "false"}}
 	{{>languagetoggle}}
 {{/isnt}}
