@@ -12,5 +12,8 @@
   ],
   "devDependencies": {
     "wet-boew": "https://github.com/wet-boew/wet-boew/tarball/v4.0"
+  },
+  "resolutions": {
+    "jquery": "~2.1.0"
   }
 }
