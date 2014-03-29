@@ -140,8 +140,7 @@ $header-margin: 15px;
 		border-top: 1px solid #87AEC9;
 		border-bottom: 4px solid #CCCCCC;
 
-		ul
-		 {
+		ul {
 			&.menu {
 				margin-bottom: 0;
 				> {
@@ -166,12 +165,12 @@ $header-margin: 15px;
 	}
 
 	.active {
-		a {
+		a, summary {
 			@extend %submenu-colors;
 		}
 	}
 
-	a {
+	a, summary {
 		display: block;
 		color: #FFF;
 		font-weight: 700;
@@ -185,7 +184,7 @@ $header-margin: 15px;
 		border-bottom: 4px solid #0F315B;
 		border-radius: 0 0 3px 3px;
 
-		a {
+		a, summary {
 			@extend %submenu-colors;
 			font-weight: 400;
 
