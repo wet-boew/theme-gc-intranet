@@ -48,16 +48,15 @@ $header-margin: 15px;
 
 #wmms {
 	height: 1.9em;
-	top: 0;
+	top: -5px;
 	right: $header-margin;
-	margin-top: -2.8em;
+	margin-top: -2.5em;
 	position: absolute;
 	z-index: 2;
 }
 
 #gcwu-sig {
-	margin-top: 2.8em;
-	margin-left: $header-margin;
+	margin: 2.8em 0 0.25em $header-margin;
 }
 
 #wb-bnr {
@@ -78,6 +77,15 @@ $header-margin: 15px;
 			position: relative;
 		}
 	}
+	> {
+		.container {
+			> {
+				.row {
+					position: relative;
+				}
+			}
+		}
+	}
 }
 
 #wb-lng {
@@ -85,7 +93,9 @@ $header-margin: 15px;
 	@include linear-background ($language-toggle-gradient-start, $language-toggle-gradient-end);
 	padding: 0 1em;
 	margin-right: $header-margin;
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
 
 	ul {
 		margin-left: 0;
