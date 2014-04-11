@@ -77,6 +77,7 @@ $header-margin: 15px;
 			position: relative;
 		}
 	}
+
 	> {
 		.container {
 			> {
@@ -131,6 +132,7 @@ $header-margin: 15px;
 #wb-sttl {
 	min-height: 2em;
 	margin: 5px 0;
+
 	a {
 		font-size: 1.9em;
 		text-shadow: 1px 1px 1px #333;
@@ -144,6 +146,7 @@ $header-margin: 15px;
 
 #wb-sm {
 	margin-top: 15px;
+
 	.nvbar {
 		background-color: #146094;
 		@include linear-background ($navigation-bar-gradient-start, $navigation-bar-gradient-end);
@@ -153,10 +156,12 @@ $header-margin: 15px;
 		ul {
 			&.menu {
 				margin-bottom: 0;
+
 				> {
 					li {
 						padding: 0;
 						border-right: 1px solid #999;
+
 						> {
 							a {
 								&.wb-navcurr {
@@ -164,6 +169,7 @@ $header-margin: 15px;
 								}
 							}
 						}
+
 						&.active {
 							border-color: #CCC;
 							border-right-color: #CCC;
@@ -202,6 +208,7 @@ $header-margin: 15px;
 				@extend %gcintranet-theme-wb-sm-wb-navcurr;
 			}
 		}
+
 		.slflnk {
 			background: #bbb;
 		}
@@ -229,18 +236,20 @@ body {
 #wb-sec {
 	margin-top: 20px;
 	padding-bottom: 2em;
+
 	h3 {
 		padding: 15px;
 		margin: 0;
 		border: 1px solid #ddd;
 		border-bottom: 3px solid #666;
-		line-height: 0.8;
+		font-size: 1em;
+
 		a {
 			color: #333;
-			font-size: 0.7em;
 			text-decoration: none;
 		}
 	}
+
 	.list-group {
 		margin-bottom: 0;
 		a {
@@ -250,9 +259,11 @@ body {
 				border-radius: 0;
 				margin-top: -1px;
 				text-decoration: none;
+
 				&.wb-navcurr {
 					@extend %secmenu-gcintranet-theme-menuitem-curr-hover-focus;
 				}
+
 				&[href] {
 					&:hover, &:focus {
 						@extend %secmenu-gcintranet-theme-menuitem-curr-hover-focus;
@@ -260,6 +271,7 @@ body {
 				}
 			}
 		}
+
 		.list-group {
 			.list-group-item {
 				background: darken($clrWhite, 10%);
