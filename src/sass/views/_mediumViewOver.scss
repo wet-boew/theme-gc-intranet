@@ -167,6 +167,15 @@ $header-margin: 15px;
 								&.wb-navcurr {
 									@extend %gcintranet-theme-wb-sm-wb-navcurr;
 								}
+
+								// :focus not needed since already covered by the &.active state
+								&:hover {
+									@extend %submenu-colors;
+
+									.expicon {
+										border-top-color: #000;
+									}
+								}
 							}
 						}
 
