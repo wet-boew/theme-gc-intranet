@@ -150,7 +150,7 @@ module.exports = ->
 				dest: "dist/assets"
 			js:
 				expand: true
-				cwd: "src/js"
+				cwd: "src"
 				src: "**/*.js"
 				dest: "dist/unmin/js"
 			deploy:
@@ -164,7 +164,7 @@ module.exports = ->
 		sass:
 			base:
 				expand: true
-				cwd: "src/sass"
+				cwd: "src"
 				src: "*theme.scss"
 				dest: "dist/unmin/css"
 				ext: ".css"
