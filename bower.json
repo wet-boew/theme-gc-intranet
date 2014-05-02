@@ -1,19 +1,37 @@
 {
   "name": "theme-gc-intranet",
   "version": "4.0.2-development",
-  "license": "MIT",
+  "license": "https://github.com/wet-boew/theme-gc-intranet/blob/master/License-en.txt",
   "ignore": [
     "**/.*",
     "bower.json",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "lib"
   ],
   "devDependencies": {
     "wet-boew": "https://github.com/wet-boew/wet-boew/tarball/master"
   },
   "resolutions": {
     "jquery": "~2.1.0"
-  }
+  },
+  "homepage": "https://github.com/wet-boew/theme-gc-intranet",
+  "authors": [
+    "WET Team"
+  ],
+  "description": "Government of Canada Intranet theme - This theme adapts the Government of Canada Web Usability theme for intranet sites",
+  "main": [
+    "src/theme.js",
+    "src/theme.scss"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "wet-boew",
+    "gcwu-intranet",
+    "theme"
+  ]
 }
