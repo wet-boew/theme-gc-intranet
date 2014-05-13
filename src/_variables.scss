@@ -9,11 +9,13 @@
 
 @mixin navigation-links {
 	a {
-		&:link {
+		&:link,
+		&:visited {
 			text-decoration: none;
 		}
 
-		&:hover, &:focus {
+		&:hover,
+		&:focus {
 			text-decoration: underline;
 		}
 	}
