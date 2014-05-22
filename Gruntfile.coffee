@@ -232,7 +232,7 @@ module.exports = (grunt) ->
 				options:
 					banner: "<%= banner %>"
 				expand: true
-				cwd: "src/js/"
+				cwd: "<%= copy.js.cwd %>"
 				src: "<%= copy.js.src %>"
 				dest: "dist/js/"
 				ext: ".min.js"
