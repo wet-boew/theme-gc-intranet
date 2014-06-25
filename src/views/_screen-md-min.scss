@@ -215,7 +215,9 @@ $header-margin: 15px;
 		}
 
 		.slflnk {
-			background: #bbb;
+			a {
+				background: #bbb;
+			}
 		}
 	}
 }
