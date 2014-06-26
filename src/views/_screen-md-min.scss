@@ -7,19 +7,10 @@
 /*
   @title: Medium view and over (screen only)
  */
-$language-toggle-gradient-start: #494949;
-$language-toggle-gradient-end: #333333;
-$banner-gradient-start: #29527D;
-$banner-gradient-end: #397BC5;
-$search-button-gradient-start: #F0F0F0;
-$search-button-gradient-end: #CCCCCC; /* Shorthand can't be used because it doesn't work with IE 8 & 9 gradients */
-$navigation-bar-gradient-start: #2A79C5;
-$navigation-bar-gradient-end: #1B5A9F;
-$header-margin: 15px;
 
 %page-borders {
-	border-left: 1px solid #CCC;
-	border-right: 1px solid #CCC;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 }
 
 %search-controls-overrides {
@@ -28,7 +19,7 @@ $header-margin: 15px;
 
 
 %submenu-colors {
-	background-color: #CCC;
+	background-color: #ccc;
 	color: #000;
 }
 
@@ -38,7 +29,7 @@ $header-margin: 15px;
 }
 
 %gcintranet-theme-wb-sm-wb-navcurr {
-	background: #0F315B;
+	background: #0f315b;
 	color: #fff;
 }
 
@@ -64,9 +55,9 @@ $header-margin: 15px;
 }
 
 #wb-bar {
-	background: #FFF;
+	background: #fff;
 	border-top: 5px $language-toggle-gradient-start solid;
-	border-bottom: 2px solid #CCC;
+	border-bottom: 2px solid #ccc;
 	position: relative;
 	box-shadow: 0 2px 5px;
 	z-index: 2;
@@ -104,7 +95,7 @@ $header-margin: 15px;
 	}
 
 	a {
-		color: #FFF;
+		color: #fff;
 	}
 }
 
@@ -140,7 +131,7 @@ $header-margin: 15px;
 }
 
 #wb-bnr-ss {
-	border-top: 1px solid #FFF;
+	border-top: 1px solid #fff;
 	box-shadow: inset 0 1px 5px;
 }
 
@@ -150,8 +141,8 @@ $header-margin: 15px;
 	.nvbar {
 		background-color: #146094;
 		@include linear-background ($navigation-bar-gradient-start, $navigation-bar-gradient-end);
-		border-top: 1px solid #87AEC9;
-		border-bottom: 4px solid #CCCCCC;
+		border-top: 1px solid #87aec9;
+		border-bottom: 4px solid #ccc;
 
 		ul {
 			&.menu {
@@ -176,8 +167,8 @@ $header-margin: 15px;
 						}
 
 						&.active {
-							border-color: #CCC;
-							border-right-color: #CCC;
+							border-color: #ccc;
+							border-right-color: #ccc;
 						}
 					}
 				}
@@ -193,7 +184,7 @@ $header-margin: 15px;
 
 	a, summary {
 		display: block;
-		color: #FFF;
+		color: #fff;
 		font-weight: 700;
 		padding: 0.48em 0.79em;
 		text-decoration: none;
@@ -202,7 +193,7 @@ $header-margin: 15px;
 	.sm {
 		@extend %medium-view-navigation-links;
 		@extend %submenu-colors;
-		border-bottom: 4px solid #0F315B;
+		border-bottom: 4px solid #0f315b;
 		border-radius: 0 0 3px 3px;
 
 		a, summary {

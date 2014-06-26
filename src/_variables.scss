@@ -7,6 +7,19 @@
 
 @import "../lib/wet-boew/src/variables";
 
+$language-toggle-gradient-start: #494949;
+$language-toggle-gradient-end: #333;
+$banner-gradient-start: #29527d;
+$banner-gradient-end: #397bc5;
+$search-button-gradient-start: #f0f0f0;
+$search-button-gradient-end: #ccc;
+$navigation-bar-gradient-start: #2a79c5;
+$navigation-bar-gradient-end: #1b5a9f;
+$header-margin: 15px;
+$gcintranet-theme-mb-pnl-bg: #efefef;
+$footer-decoration-gradient-start: #cbcbcb;
+$footer-decoration-gradient-end: #999;
+
 @mixin linear-background($start-color, $end-color) {
 	background-image: linear-gradient($start-color, $end-color);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr="#{ie-hex-str($start-color)}", endColorstr="#{ie-hex-str($end-color)}");

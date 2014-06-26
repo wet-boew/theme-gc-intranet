@@ -7,11 +7,9 @@
 /*
   @title: Small view and over (screen only)
  */
-$footer-decoration-gradient-start: #CBCBCB;
-$footer-decoration-gradient-end: #999;
 
 #wb-info {
-	background: #EEE;
+	background: #eee;
 	&:after {
 		content: " ";
 		display: block;
