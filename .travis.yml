@@ -1,13 +1,17 @@
 language: node_js
 node_js:
-  - '0.10'
+  - "0.10"
 
 env:
   global:
     - secure: "a33j/gwcHLwbHvc/nfcsSibcYfm5NsNnzB0onrWeQ2ufE/Pv7aO0GK+aeTx2eQVf8n43m1Go9FUdceaz7qpGa7ieHPpEVtpy73Pb2h9QtM881bmt1RJl/fO6Y5PbVffJu0FiDh/Wyo2+so0xevo5TqPYmnFOQxn9CxAARWg4onE="
 
 install:
-  - scripts/setup
+  - ./script/setup
+  - gem install scss-lint --no-ri --version "=0.24.0"
 
 script:
-  - grunt && ./scripts/travis_artifacts.sh
+  - travis_retry ./script/travis_script.sh
+
+after_success:
+  - ./script/travis_artifacts.sh
