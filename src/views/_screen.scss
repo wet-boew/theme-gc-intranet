@@ -62,7 +62,8 @@
 	}
 
 	li {
-		&:before, &:after {
+		&:before,
+		&:after {
 			font-family: "Glyphicons Halflings";
 			font-size: 0.7em;
 			color: #333;

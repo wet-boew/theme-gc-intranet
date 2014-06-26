@@ -114,7 +114,8 @@
 		@extend %search-controls-overrides;
 		@include linear-background ($search-button-gradient-start, $search-button-gradient-end);
 
-		&:hover, &:focus {
+		&:hover,
+		&:focus {
 			@include linear-background ($search-button-gradient-end, $search-button-gradient-start);
 		}
 	}
@@ -177,12 +178,14 @@
 	}
 
 	.active {
-		a, summary {
+		a,
+		summary {
 			@extend %submenu-colors;
 		}
 	}
 
-	a, summary {
+	a,
+	summary {
 		display: block;
 		color: #fff;
 		font-weight: 700;
@@ -196,7 +199,8 @@
 		border-bottom: 4px solid #0f315b;
 		border-radius: 0 0 3px 3px;
 
-		a, summary {
+		a,
+		summary {
 			@extend %submenu-colors;
 			font-weight: 400;
 
@@ -263,7 +267,8 @@ body {
 				}
 
 				&[href] {
-					&:hover, &:focus {
+					&:hover,
+					&:focus {
 						@extend %secmenu-gcintranet-theme-menuitem-curr-hover-focus;
 					}
 				}
@@ -281,7 +286,8 @@ body {
 }
 
 [dir=rtl] {
-	#wmms, #wb-srch {
+	#wmms,
+	#wb-srch {
 		left: 0;
 		right: auto;
 	}
