@@ -46,8 +46,9 @@
 }
 
 #wb-ss {
-	padding: 0.2em 0;
 	@extend %all-view-navigation-links;
+	padding: 0.2em 0;
+
 	a {
 		@extend %banner-text-color;
 		font-size: 120%;
