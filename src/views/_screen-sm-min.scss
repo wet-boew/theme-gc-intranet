@@ -7,17 +7,16 @@
 /*
   @title: Small view and over (screen only)
  */
-$footer-decoration-gradient-start: #CBCBCB;
-$footer-decoration-gradient-end: #999;
 
 #wb-info {
-	background: #EEE;
+	background: #eee;
+
 	&:after {
+		@include linear-background ($footer-decoration-gradient-start, $footer-decoration-gradient-end);
+		background-color: $footer-decoration-gradient-end;
 		content: " ";
 		display: block;
 		height: 55px;
-		background-color: $footer-decoration-gradient-end;
-		@include linear-background ($footer-decoration-gradient-start, $footer-decoration-gradient-end);
 	}
 }
 
@@ -28,6 +27,7 @@ $footer-decoration-gradient-end: #999;
 [dir=rtl] {
 	#gc-tctr {
 		padding-right: 0;
+
 		li {
 			&:first-child {
 				padding-right: 0;

@@ -14,7 +14,7 @@
 }
 
 %banner-text-color {
-	color: #FFF;
+	color: #fff;
 }
 
 %fip-height {
@@ -36,6 +36,7 @@
 
 #wb-sttl {
 	@extend %all-view-navigation-links;
+
 	a {
 		@extend %banner-text-color;
 	}
@@ -46,8 +47,9 @@
 }
 
 #wb-ss {
-	padding: 0.2em 0;
 	@extend %all-view-navigation-links;
+	padding: 0.2em 0;
+
 	a {
 		@extend %banner-text-color;
 		font-size: 120%;
@@ -56,16 +58,18 @@
 
 #wb-bc {
 	.breadcrumb {
-		margin-bottom: 0;
 		background: transparent;
+		margin-bottom: 0;
 	}
 
 	li {
-		&:before, &:after {
+		&:before,
+		&:after {
+			color: #333;
 			font-family: "Glyphicons Halflings";
 			font-size: 0.7em;
-			color: #333;
 		}
+
 		&:before {
 			content: "\e092";
 		}
@@ -94,10 +98,12 @@
 			&:before {
 				@extend %no-breadcrumb-icon;
 			}
+
 			&:after {
 				content: "\e091";
 				padding: 0 5px;
 			}
+
 			&:first-child {
 				&:after {
 					@extend %no-breadcrumb-icon;
