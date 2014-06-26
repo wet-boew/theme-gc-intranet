@@ -7,6 +7,11 @@
 
 @import "../lib/wet-boew/src/variables";
 
+@mixin linear-background($start-color, $end-color) {
+	background-image: linear-gradient($start-color, $end-color);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr="#{ie-hex-str($start-color)}", endColorstr="#{ie-hex-str($end-color)}");
+}
+
 @mixin navigation-links {
 	a {
 		&:link,
