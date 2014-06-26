@@ -46,6 +46,7 @@
 
 #wb-sttl {
 	position: relative;
+
 	a {
 		font-size: 1.5em;
 		text-shadow: 0 1px 1px #044062;
@@ -58,10 +59,12 @@
 		margin: 0;
 		position: relative;
 		z-index: 2;
+
 		li {
 			padding: 4px 10px;
 			width: 100%;
 		}
+
 		a {
 			color: #000;
 			display: block;
@@ -74,6 +77,7 @@
 
 #mb-pnl {
 	background: $gcintranet-theme-mb-pnl-bg;
+
 	header {
 		background-color: #174f88;
 	}
@@ -132,11 +136,14 @@
 
 	.sm-pnl {
 		background: #146094;
+
 		a {
 			@extend %small-view-under-color-fff;
 		}
+
 		summary {
 			@extend %small-view-under-color-fff;
+
 			&:hover,
 			&:focus {
 				@extend %small-view-under-color-fff;
@@ -172,6 +179,7 @@
 				text-align: left;
 			}
 		}
+
 		.pnl-btn {
 			float: left;
 		}

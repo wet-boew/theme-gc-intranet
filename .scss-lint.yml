@@ -17,9 +17,3 @@ linters:
     enabled: false
   NameFormat:
     enabled: false
-
-# Temporary execptions
-  FinalNewline:
-    enabled: false
-  EmptyLineBetweenBlocks:
-    enabled: false

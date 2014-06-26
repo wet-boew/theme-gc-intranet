@@ -10,6 +10,7 @@
 
 #wb-info {
 	background: #eee;
+
 	&:after {
 		@include linear-background ($footer-decoration-gradient-start, $footer-decoration-gradient-end);
 		background-color: $footer-decoration-gradient-end;
@@ -26,6 +27,7 @@
 [dir=rtl] {
 	#gc-tctr {
 		padding-right: 0;
+
 		li {
 			&:first-child {
 				padding-right: 0;
