@@ -31,6 +31,7 @@
 }
 
 #wb-bar {
+	background: #000;
 	min-height: 2.2em;
 }
 
@@ -41,10 +42,6 @@
 #wb-bnr {
 	background-image: linear-gradient(#4474ad, #4474ad, #174f88);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="#{ie-hex-str(#4474ad)}", endColorstr="#{ie-hex-str(#174f88)}");
-}
-
-#wb-bar {
-	background: #000;
 }
 
 #wb-sttl {
