@@ -23,9 +23,3 @@ linters:
     enabled: false
   EmptyLineBetweenBlocks:
     enabled: false
-  PropertySortOrder:
-    enabled: false
-  SpaceAfterComma:
-    enabled: false
-  UrlQuotes:
-    enabled: false

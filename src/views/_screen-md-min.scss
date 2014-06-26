@@ -39,10 +39,10 @@
 
 #wmms {
 	height: 1.9em;
-	top: -5px;
-	right: $header-margin;
 	margin-top: -2.5em;
 	position: absolute;
+	right: $header-margin;
+	top: -5px;
 	z-index: 2;
 }
 
@@ -56,10 +56,10 @@
 
 #wb-bar {
 	background: #fff;
-	border-top: 5px $language-toggle-gradient-start solid;
 	border-bottom: 2px solid #ccc;
-	position: relative;
+	border-top: 5px $language-toggle-gradient-start solid;
 	box-shadow: 0 2px 5px;
+	position: relative;
 	z-index: 2;
 
 	+ {
@@ -83,15 +83,15 @@
 #wb-lng {
 	@extend %medium-view-navigation-links;
 	@include linear-background ($language-toggle-gradient-start, $language-toggle-gradient-end);
-	padding: 0 1em;
 	margin-right: $header-margin;
+	padding: 0 1em;
 	position: absolute;
-	top: 0;
 	right: 0;
+	top: 0;
 
 	ul {
-		margin-left: 0;
 		margin-bottom: 5px;
+		margin-left: 0;
 	}
 
 	a {
@@ -100,10 +100,10 @@
 }
 
 #wb-srch {
-	position: absolute;
-	top: 0;
-	right: $header-margin;
 	margin-top: 0.5em;
+	position: absolute;
+	right: $header-margin;
+	top: 0;
 
 	input {
 		@extend %search-controls-overrides;
@@ -122,8 +122,8 @@
 }
 
 #wb-sttl {
-	min-height: 2em;
 	margin: 5px 0;
+	min-height: 2em;
 
 	a {
 		font-size: 1.9em;
@@ -140,10 +140,10 @@
 	margin-top: 15px;
 
 	.nvbar {
-		background-color: #146094;
 		@include linear-background ($navigation-bar-gradient-start, $navigation-bar-gradient-end);
-		border-top: 1px solid #87aec9;
+		background-color: #146094;
 		border-bottom: 4px solid #ccc;
+		border-top: 1px solid #87aec9;
 
 		ul {
 			&.menu {
@@ -151,8 +151,8 @@
 
 				> {
 					li {
-						padding: 0;
 						border-right: 1px solid #999;
+						padding: 0;
 
 						> {
 							a {
@@ -186,8 +186,8 @@
 
 	a,
 	summary {
-		display: block;
 		color: #fff;
+		display: block;
 		font-weight: 700;
 		padding: 0.48em 0.79em;
 		text-decoration: none;
@@ -240,11 +240,11 @@ body {
 	padding-bottom: 2em;
 
 	h3 {
-		padding: 15px;
-		margin: 0;
 		border: 1px solid #ddd;
 		border-bottom: 3px solid #666;
 		font-size: 1em;
+		margin: 0;
+		padding: 15px;
 
 		a {
 			color: #333;
@@ -257,8 +257,8 @@ body {
 		a {
 			&.list-group-item {
 				background: $clrWhite;
-				color: $clrDark;
 				border-radius: 0;
+				color: $clrDark;
 				margin-top: -1px;
 				text-decoration: none;
 
