@@ -401,6 +401,7 @@ module.exports = (grunt) ->
 			options:
 				type: "html"
 				concurrentProcess: 5
+				preserveLineBreaks: true
 			all:
 				cwd: "dist"
 				src: [
