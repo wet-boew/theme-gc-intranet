@@ -25,6 +25,11 @@
 	@include navigation-links;
 }
 
+.wb-sl {
+	background: #000;
+	color: #fff;
+}
+
 #gcwu-sig {
 	@extend %fip-height;
 	margin: 10px 0;
