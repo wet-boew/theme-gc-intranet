@@ -224,11 +224,11 @@
 }
 
 body {
-	> {
-		main {
-			@extend %page-borders;
-		}
+	main {
+		@extend %page-borders;
+	}
 
+	> {
 		header + .container {
 			@extend %page-borders;
 		}
