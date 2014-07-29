@@ -67,6 +67,101 @@
 	}
 }
 
+%submenu-colors {
+	background-color: #ccc;
+	color: #000;
+}
+
+%gcintranet-theme-wb-sm-wb-navcurr {
+	background: #0f315b;
+	color: #fff;
+}
+
+%all-views-navigation-links {
+	@include navigation-links;
+}
+
+#wb-sm {
+	margin-top: 15px;
+
+	.nvbar {
+		@include linear-background ($navigation-bar-gradient-start, $navigation-bar-gradient-end);
+		background-color: #146094;
+		border-bottom: 4px solid #ccc;
+		border-top: 1px solid #87aec9;
+
+		ul {
+			&.menu {
+				margin-bottom: 0;
+
+				> {
+					li {
+						border-right: 1px solid #999;
+						padding: 0;
+
+						> {
+							a {
+								&.wb-navcurr {
+									@extend %gcintranet-theme-wb-sm-wb-navcurr;
+								}
+
+								// :focus not needed since already covered by the &.active state
+								&:hover {
+									@extend %submenu-colors;
+								}
+							}
+						}
+
+						&.active {
+							border-color: #ccc;
+							border-right-color: #ccc;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.active {
+		a,
+		summary {
+			@extend %submenu-colors;
+		}
+	}
+
+	a,
+	summary {
+		color: #fff;
+		display: block;
+		font-weight: 700;
+		padding: 0.48em 0.79em;
+		text-decoration: none;
+	}
+
+	.sm {
+		@extend %all-views-navigation-links;
+		@extend %submenu-colors;
+		border-bottom: 4px solid #0f315b;
+		border-radius: 0 0 3px 3px;
+
+		a,
+		summary {
+			@extend %submenu-colors;
+			font-weight: 400;
+
+			&.wb-navcurr {
+				@extend %gcintranet-theme-wb-sm-wb-navcurr;
+			}
+		}
+
+		.slflnk {
+			a {
+				background: #bbb;
+			}
+		}
+	}
+}
+
 #wb-bc {
 	.breadcrumb {
 		background: transparent;
