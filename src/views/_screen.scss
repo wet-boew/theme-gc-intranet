@@ -157,6 +157,10 @@
 		.slflnk {
 			a {
 				background: #bbb;
+
+				&.wb-navcurr {
+					@extend %gcintranet-theme-wb-sm-wb-navcurr;
+				}
 			}
 		}
 	}
