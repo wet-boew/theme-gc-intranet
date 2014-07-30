@@ -133,7 +133,9 @@
 
 body {
 	main {
-		@extend %page-borders;
+		&.container {
+			@extend %page-borders;
+		}
 	}
 
 	> {
