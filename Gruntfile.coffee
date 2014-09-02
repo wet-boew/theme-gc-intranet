@@ -14,7 +14,6 @@ module.exports = (grunt) ->
 		"travis"
 		"Task run by Travis-CI"
 		[
-			"hub"
 			"dist"
 		]
 	)
