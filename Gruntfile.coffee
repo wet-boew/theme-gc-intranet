@@ -6,7 +6,6 @@ module.exports = (grunt) ->
 		"default"
 		"Default task, that runs the production build"
 		[
-			"hub"
 			"dist"
 		]
 	)
@@ -53,6 +52,14 @@ module.exports = (grunt) ->
 			"assets"
 			"css"
 			"js"
+		]
+	)
+
+	@registerTask("init"
+		"Only needed when the repo is first cloned"
+		[
+			"install-dependencies"
+			"hub"
 		]
 	)
 
@@ -126,7 +133,7 @@ module.exports = (grunt) ->
 		jqueryVersion: grunt.file.readJSON("lib/jquery/bower.json")
 		jqueryOldIEVersion: grunt.file.readJSON("lib/jquery-oldIE/bower.json")
 		banner: "/*!\n * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)\n * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html\n" +
-				" * v<%= pkg.version %> - " + "<%= grunt.template.today(\"yyyy-mm-dd\") %>\n *\n */"
+				" * v<%= pkg.version %> - " + "<%= grunt.template.today('yyyy-mm-dd') %>\n *\n */"
 
 		checkDependencies:
 			all:
@@ -432,6 +439,11 @@ module.exports = (grunt) ->
 					"dist"
 				]
 
+		"install-dependencies":
+			options:
+				cwd: "lib/wet-boew"
+				failOnError: false
+
 		connect:
 			options:
 				port: 8000
@@ -478,6 +490,7 @@ module.exports = (grunt) ->
 	@loadNpmTasks "grunt-htmlcompressor"
 	@loadNpmTasks "grunt-hub"
 	@loadNpmTasks "grunt-i18n-csv"
+	@loadNpmTasks "grunt-install-dependencies"
 	@loadNpmTasks "grunt-jscs-checker"
 	@loadNpmTasks "grunt-sass"
 
