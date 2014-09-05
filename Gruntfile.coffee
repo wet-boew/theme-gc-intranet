@@ -26,7 +26,7 @@ module.exports = (grunt) ->
 			"build"
 			"assets-dist"
 			"assemble"
-			"htmlcompressor"
+			"htmlmin"
 		]
 	)
 
@@ -415,10 +415,9 @@ module.exports = (grunt) ->
 						dest: "dist/demos"
 				]
 
-		htmlcompressor:
+		htmlmin:
 			options:
-				type: "html"
-				concurrentProcess: 5
+				collapseWhitespace: true
 				preserveLineBreaks: true
 			all:
 				cwd: "dist"
@@ -442,6 +441,7 @@ module.exports = (grunt) ->
 			options:
 				cwd: "lib/wet-boew"
 				failOnError: false
+				isDevelopment: true
 
 		connect:
 			options:
@@ -450,13 +450,11 @@ module.exports = (grunt) ->
 			server:
 				options:
 					base: "dist"
-					middleware: (connect, options) ->
-						middlewares = []
-						middlewares.push(connect.compress(
+					middleware: (connect, options, middlewares) ->
+						middlewares.unshift(connect.compress(
 							filter: (req, res) ->
 								/json|text|javascript|dart|image\/svg\+xml|application\/x-font-ttf|application\/vnd\.ms-opentype|application\/vnd\.ms-fontobject/.test(res.getHeader('Content-Type'))
 						))
-						middlewares.push(connect.static(options.base));
 						middlewares
 
 		"gh-pages":
@@ -483,14 +481,15 @@ module.exports = (grunt) ->
 	@loadNpmTasks "grunt-contrib-copy"
 	@loadNpmTasks "grunt-contrib-cssmin"
 	@loadNpmTasks "grunt-contrib-jshint"
+	@loadNpmTasks "grunt-contrib-htmlmin"
 	@loadNpmTasks "grunt-contrib-uglify"
 	@loadNpmTasks "grunt-contrib-watch"
 	@loadNpmTasks "grunt-gh-pages"
-	@loadNpmTasks "grunt-htmlcompressor"
 	@loadNpmTasks "grunt-hub"
 	@loadNpmTasks "grunt-i18n-csv"
 	@loadNpmTasks "grunt-install-dependencies"
 	@loadNpmTasks "grunt-jscs-checker"
 	@loadNpmTasks "grunt-sass"
 
+	require( "time-grunt" )( grunt )
 	@
