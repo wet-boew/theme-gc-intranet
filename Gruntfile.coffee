@@ -492,4 +492,5 @@ module.exports = (grunt) ->
 	@loadNpmTasks "grunt-jscs-checker"
 	@loadNpmTasks "grunt-sass"
 
+	require( "time-grunt" )( grunt )
 	@
