@@ -27,9 +27,35 @@
 	@extend %theme-gc-intranet-print-display-none-important;
 }
 
+#wb-lng {
+	@extend %theme-gc-intranet-print-display-none-important;
+}
+
+#wb-glb-mn {
+	@extend %theme-gc-intranet-print-display-none-important;
+}
+
+#gcwu-sig {
+	height: 30px;
+}
+
 #wmms {
 	height: 30px;
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+#wb-bc {
+	.breadcrumb {
+		margin-bottom: 0;
+	}
+	
+	a[href]:after {
+		content: "";
+	}
+}
+
+h1 {
+	margin-top: 0;
 }
