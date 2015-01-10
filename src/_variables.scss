@@ -5,8 +5,6 @@
  *
  */
 
-@import "../lib/wet-boew/src/variables";
-
 $language-toggle-gradient-start: #494949;
 $language-toggle-gradient-end: #333;
 $banner-gradient-start: #29527d;
@@ -38,3 +36,5 @@ $footer-decoration-gradient-end: #999;
 		}
 	}
 }
+
+@import "../lib/wet-boew/src/variables";
