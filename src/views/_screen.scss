@@ -8,11 +8,6 @@
   @title: All screen views
  */
 
-%no-breadcrumb-icon {
-	content: none;
-	padding: 0;
-}
-
 %banner-text-color {
 	color: #fff;
 }
@@ -166,32 +161,6 @@
 	}
 }
 
-#wb-bc {
-	.breadcrumb {
-		background: transparent;
-		margin-bottom: 0;
-	}
-
-	li {
-		&:before,
-		&:after {
-			color: #333;
-			font-family: "Glyphicons Halflings";
-			font-size: 0.7em;
-		}
-
-		&:before {
-			content: "\e092";
-		}
-
-		&:first-child {
-			&:before {
-				@extend %no-breadcrumb-icon;
-			}
-		}
-	}
-}
-
 #wb-dtmd {
 	float: right;
 }
@@ -203,25 +172,6 @@
 }
 
 [dir=rtl] {
-	#wb-bc {
-		li {
-			&:before {
-				@extend %no-breadcrumb-icon;
-			}
-
-			&:after {
-				content: "\e091";
-				padding: 0 5px;
-			}
-
-			&:first-child {
-				&:after {
-					@extend %no-breadcrumb-icon;
-				}
-			}
-		}
-	}
-
 	#wb-dtmd {
 		float: left;
 	}
