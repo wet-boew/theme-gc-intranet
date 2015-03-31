@@ -196,6 +196,42 @@ body {
 	}
 }
 
+#gc-bar {
+	@extend %float-right;
+	@extend %medium-view-navigation-links;
+	margin: 15px 10px;
+
+	li {
+		padding: 0;
+	}
+
+	a {
+		border-left: 1px solid $gc-header-footer-divider-color;
+		padding: 0 0.5em;
+	}
+
+	> {
+
+		li {
+			&:first-child {
+				a {
+					border-left: 0;
+				}
+			}
+		}
+	}
+
+	ul {
+		li {
+			&:last-child {
+				a {
+					border-right: 0;
+				}
+			}
+		}
+	}
+}
+
 [dir=rtl] {
 	#wmms,
 	#wb-srch {
