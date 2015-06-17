@@ -2,5 +2,6 @@
 	"defaultLanguage": "en",
 	"wetSiteRoot": "http://wet-boew.github.io/v4.0-ci",
 	"repository": "theme-gc-intranet",
+	"theme": "theme-gc-intranet",
 	"themeJS": true
 }
