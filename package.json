@@ -1,6 +1,6 @@
 {
   "name": "theme-gc-intranet",
-  "version": "4.0.16-development",
+  "version": "4.0.16",
   "scripts": {
     "test": "grunt",
     "postinstall": "bower update",
