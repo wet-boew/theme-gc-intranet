@@ -131,6 +131,12 @@
 	}
 }
 
+#wb-so {
+	.container {
+		@extend %page-borders;
+	}
+}
+
 body {
 	main {
 		&.container {
