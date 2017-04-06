@@ -11,22 +11,14 @@ module.exports = (grunt) ->
 	)
 
 	@registerTask(
-		"travis"
-		"Task run by Travis-CI"
-		[
-			"dist"
-		]
-	)
-
-	@registerTask(
 		"dist"
 		"Produces the production files"
 		[
-			"checkDependencies"
 			"build"
 			"assets-dist"
 			"assemble"
 			"htmlmin"
+			"htmllint"
 			"useMinAssets"
 		]
 	)
@@ -39,6 +31,7 @@ module.exports = (grunt) ->
 			"build"
 			"assemble:demos"
 			"assemble:theme"
+			"htmllint"
 		]
 	)
 
@@ -46,6 +39,7 @@ module.exports = (grunt) ->
 		"build"
 		"Produces unminified files"
 		[
+			"checkDependencies"
 			"clean:dist"
 			"i18n_csv"
 			"copy:wetboew"
@@ -139,33 +133,50 @@ module.exports = (grunt) ->
 			htmlFiles = grunt.file.expand(
 				"dist/**/*.html"
 				"!dist/unmin/**/*.html"
-			);
+			)
 
 			htmlFiles.forEach(
 				( file ) ->
-					contents = grunt.file.read( file )
-					contents = contents.replace( /\.\.\/(wet\-boew|theme\-gc\-intranet)/g, "$1" )
-					contents = contents.replace( /\"(?!https:)([^\"]*)?\.(js|css)\"/g, "\"$1.min.$2\"" )
+					contents = grunt.file.read file
+					contents = contents.replace /\.\.\/(wet\-boew|theme\-gc\-intranet)/g, "$1"
+					contents = contents.replace /\"(?!https:)([^\"]*)?\.(js|css)\"/g, "\"$1.min.$2\""
 
-					grunt.file.write(file, contents);
-			);
+					grunt.file.write file, contents
+			)
 	)
 
 	@initConfig
 
 		# Metadata.
-		pkg: @file.readJSON("package.json")
+		pkg: @file.readJSON "package.json"
 		themeDist: "dist/<%= pkg.name %>"
-		jqueryVersion: grunt.file.readJSON("lib/jquery/bower.json")
-		jqueryOldIEVersion: grunt.file.readJSON("lib/jquery-oldIE/bower.json")
+		jqueryVersion: @file.readJSON "lib/jquery/bower.json"
+		jqueryOldIEVersion: @file.readJSON "lib/jquery-oldIE/bower.json"
 		banner: "/*!\n * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)\n * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html\n" +
 				" * v<%= pkg.version %> - " + "<%= grunt.template.today('yyyy-mm-dd') %>\n *\n */"
+
+		# Commit Messages
+		travisBuildMessage: "Travis build " + process.env.TRAVIS_BUILD_NUMBER
+		distDeployMessage: ((
+			if process.env.TRAVIS_TAG
+				"Production files for the " + process.env.TRAVIS_TAG + " release."
+			else
+				"<%= travisBuildMessage %>"
+		))
+		cdnDeployMessage: ((
+			if process.env.TRAVIS_TAG
+				"CDN files for the " + process.env.TRAVIS_TAG + " release."
+			else
+				"<%= travisBuildMessage %>"
+		))
+
 		deployBranch: "<%= pkg.name %>"
 
 		checkDependencies:
 			all:
 				options:
 					npmInstall: false
+
 		clean:
 			dist: [ "dist"]
 
@@ -243,12 +254,12 @@ module.exports = (grunt) ->
 						'**/*.{png,gif,jpg,ico,ttf,eot,otf,woff,svg,swf}'
 					]
 					process: (content, filepath) ->
-						if filepath.match(/\.css/)
-							return content.replace(/\.\.\/\.\.\/wet-boew\/(assets|fonts)/g, '../$1')
+						if filepath.match /\.css/
+							return content.replace /\.\.\/\.\.\/wet-boew\/(assets|fonts)/g, '../$1'
 						content
 
 		sass:
-			base:
+			all:
 				expand: true
 				cwd: "src"
 				src: "*.scss"
@@ -296,19 +307,17 @@ module.exports = (grunt) ->
 		cssmin:
 			theme:
 				expand: true
-				cwd: "<%= themeDist %>/css/"
+				cwd: "<%= themeDist %>/css"
 				src: "*.css"
 				ext: ".min.css"
-				dest: "<%= themeDist %>/css/"
+				dest: "<%= themeDist %>/css"
 
 		cssmin_ie8_clean:
 			min:
 				expand: true
-				cwd: "<%= themeDist %>/css/"
-				src: [
-					"**/ie8*.min.css"
-				]
-				dest: "<%= themeDist %>/css/"
+				cwd: "<%= themeDist %>/css"
+				src: "**/ie8*.min.css"
+				dest: "<%= themeDist %>/css"
 
 		jshint:
 			options:
@@ -331,9 +340,9 @@ module.exports = (grunt) ->
 				options:
 					banner: "<%= banner %>"
 				expand: true
-				cwd: "<%= themeDist %>/"
+				cwd: "<%= themeDist %>"
 				src: "**/*.js"
-				dest: "<%= themeDist %>/"
+				dest: "<%= themeDist %>"
 				ext: ".min.js"
 
 		i18n_csv:
@@ -382,7 +391,7 @@ module.exports = (grunt) ->
 							"!site/pages/404*.hbs"
 							"!site/pages/servermessage-*.hbs"
 						]
-				dest: "dist/unmin/"
+				dest: "dist/unmin"
 				src: "!*.*"
 
 			demos:
@@ -441,6 +450,27 @@ module.exports = (grunt) ->
 				dest: "dist"
 				expand: true
 
+		htmllint:
+			all:
+				options:
+					ignore: [
+						"The “details” element is not supported properly by browsers yet. It would probably be better to wait for implementations."
+						"The “date” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill."
+						"The “track” element is not supported by browsers yet. It would probably be better to wait for implementations."
+						"The “time” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill."
+						"The value of attribute “title” on element “a” from namespace “http://www.w3.org/1999/xhtml” is not in Unicode Normalization Form C." #required for vietnamese translations
+						"Text run is not in Unicode Normalization Form C." #required for vietnamese translations
+						"The “longdesc” attribute on the “img” element is obsolete. Use a regular “a” element to link to the description."
+						/Bad value “\.\/\.\.\/[^”]*” for attribute “[^”]*” on XHTML element “[^”]*”: Path component contains a segment “\/\.\.\/” not at the beginning of a relative reference, or it contains a “\/\.\/”. These should be removed./
+					]
+				src: [
+					"dist/unmin/**/*.html"
+					"!dist/unmin/**/ajax/**/*.html"
+					"!dist/unmin/assets/**/*.html"
+					"!dist/unmin/demos/menu/demo/*.html"
+					"!dist/unmin/test/*.html"
+				]
+
 		hub:
 			"wet-boew":
 				src: [
@@ -479,12 +509,7 @@ module.exports = (grunt) ->
 				options:
 					repo: process.env.DIST_REPO
 					branch: "<%= deployBranch %>"
-					message: ((
-						if process.env.TRAVIS_TAG
-							"Production files for the " + process.env.TRAVIS_TAG + " maintenance release"
-						else
-							"Travis build " + process.env.TRAVIS_BUILD_NUMBER
-					))
+					message: "<%= distDeployMessage %>"
 					silent: true,
 					tag: ((
 						if process.env.TRAVIS_TAG then process.env.TRAVIS_TAG + "-" + "<%= pkg.name.toLowerCase() %>" else false
@@ -499,12 +524,7 @@ module.exports = (grunt) ->
 					branch: "<%= deployBranch %>"
 					clone: "themes-cdn"
 					base: "<%= themeDist %>"
-					message: ((
-						if process.env.TRAVIS_TAG
-							"CDN files for the " + process.env.TRAVIS_TAG + " maintenance release"
-						else
-							"Travis build " + process.env.TRAVIS_BUILD_NUMBER
-					))
+					message: "<%= cdnDeployMessage %>"
 					silent: true,
 					tag: ((
 						if process.env.TRAVIS_TAG then process.env.TRAVIS_TAG + "-" + "<%= pkg.name.toLowerCase() %>" else false
@@ -518,7 +538,7 @@ module.exports = (grunt) ->
 				options:
 					repo: process.env.DEMOS_REPO
 					branch: process.env.DEMOS_BRANCH
-					message: "<%= grunt.config('gh-pages.travis.options.message') %>"
+					message: "<%= distDeployMessage %>"
 					silent: true
 
 	require( "load-grunt-tasks" )( grunt )
