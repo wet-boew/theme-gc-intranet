@@ -2,9 +2,9 @@
   "name": "theme-gc-intranet",
   "version": "4.0.26-development",
   "scripts": {
-    "test": "grunt",
+    "test": "grunt test",
     "postinstall": "bower update",
-    "travis_script": "scss-lint . && grunt",
+    "travis_script": "grunt dist",
     "travis_after_success": "grunt deploy"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "grunt-install-dependencies": "~0.2.0",
     "grunt-jscs": "^2.0.0",
     "grunt-sass": "^1.0.0",
+    "grunt-sass-lint": "^0.2.0",
     "grunt-wet-boew-postbuild": "^v0.1.6",
     "load-grunt-tasks": "^3.2.0",
     "time-grunt": "^1.0.0"
