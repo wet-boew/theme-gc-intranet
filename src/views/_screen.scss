@@ -54,7 +54,7 @@
 
 #wb-ss {
 	@extend %all-view-navigation-links;
-	padding: 0.2em 0;
+	padding: .2em 0;
 
 	a {
 		@extend %banner-text-color;
@@ -129,7 +129,7 @@
 		color: #fff;
 		display: block;
 		font-weight: 700;
-		padding: 0.48em 0.79em;
+		padding: .48em .79em;
 		text-decoration: none;
 	}
 
@@ -167,7 +167,7 @@
 
 #wb-info {
 	li {
-		margin-bottom: 0.75em;
+		margin-bottom: .75em;
 	}
 }
 
