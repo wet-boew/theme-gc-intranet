@@ -28,7 +28,10 @@
 
 #wmms {
 	height: 1.9em;
-	margin-top: -2.5em;
+	margin: {
+		bottom: .375em;
+		top: -2.5em;
+	}
 	position: absolute;
 	right: $header-margin;
 	top: -5px;
@@ -36,7 +39,7 @@
 }
 
 #gcwu-sig {
-	margin: 2.8em 0 .25em $header-margin;
+	margin: 2.8em 0 .625em $header-margin;
 }
 
 #wb-bnr {
